@@ -16,6 +16,7 @@ namespace LowerUnion
                 {
                     args[i] = args[i].ToLower();
                 }
+                Array.Sort(args);
             }
         }
     }
