@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace LowerUnion
 {
@@ -19,12 +20,22 @@ namespace LowerUnion
                     args[i] = args[i].ToLower();
                 }
                 Array.Sort(args);//sort alphabetic
-                //print all args with a underscore after each string
-                for (int x = 0; x < args.Length; x++)
+
+                using (StringWriter writer = new StringWriter())
                 {
-                    Console.Write(args[x]);//print string
-                    Console.Write("_");//print underscore after string
+                    for (int i = 0; i < args.Length; i++)
+                    {
+                        Console.Write(args[i]);
+
+                        if (i + 1 < args.Length)
+                            Console.Write("_");
+                    }
                 }
+
+
+                /*string mergedArgs = string.Join("_", args);//merge all strings
+                Console.WriteLine(mergedArgs);//print new string
+                StringWriter.*/
             }
         }
     }
